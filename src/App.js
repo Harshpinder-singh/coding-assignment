@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link, Route, BrowserRouter } from 'react-router-dom'
+import Matrix from './matrix'
+import Whack from './whack'
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <h3>coding Assignment</h3>
+        <Link to="/game">Whack Game</Link><br />
+        <Link to="/matrix">Matrix</Link>
+
+        <Route path="/game" component={Whack} />
+        <Route path="/matrix" component={Matrix} />
+
+      </div>
+    </BrowserRouter>
   );
 }
 
